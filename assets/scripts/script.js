@@ -20,12 +20,27 @@ $(document).ready(function () {
         })
 
 
+    }
 
+
+    function lessonList() {
+        var $list = $('.lesson__list'),
+            $navigation = $('.lesson__navigation'),
+            $button = $navigation.find('.lesson__arrow'),
+            $listButton = $('.lesson__list-button')
+
+
+        $listButton.on('click', function (e) {
+            e.preventDefault()
+            $list = $('.lesson__list').slideToggle()
+            $(this).toggleClass('open')
+        })
 
 
     }
 
 
     progressLine()
+    lessonList()
 
 })
