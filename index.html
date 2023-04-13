@@ -2,6 +2,56 @@
 <html lang="ru">
 
 <head>
+ <style class="vjs-styles-defaults">
+  .video-js {
+   width: 300px;
+   height: 150px;
+  }
+
+  .vjs-fluid {
+   padding-top: 56.25%
+  }
+ </style>
+ <style class="vjs-styles-dimensions">
+  .vjs_video_1631-dimensions {
+   width: 720px;
+   height: 1280px;
+  }
+
+  .vjs_video_1631-dimensions.vjs-fluid {
+   padding-top: 177.77777777777777%;
+  }
+ </style>
+ <style class="vjs-styles-dimensions">
+  .vjs_video_1094-dimensions {
+   width: 720px;
+   height: 1280px;
+  }
+
+  .vjs_video_1094-dimensions.vjs-fluid {
+   padding-top: 177.77777777777777%;
+  }
+ </style>
+ <style class="vjs-styles-dimensions">
+  .vjs_video_557-dimensions {
+   width: 720px;
+   height: 1280px;
+  }
+
+  .vjs_video_557-dimensions.vjs-fluid {
+   padding-top: 177.77777777777777%;
+  }
+ </style>
+ <style class="vjs-styles-dimensions">
+  .vjs_video_3-dimensions {
+   width: 720px;
+   height: 1280px;
+  }
+
+  .vjs_video_3-dimensions.vjs-fluid {
+   padding-top: 177.77777777777777%;
+  }
+ </style>
  <meta charset="UTF-8">
  <title>Вникай</title>
  <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,8 +59,18 @@
  <link rel="stylesheet" type="text/css" href="https://dev.vnikay.ru/css/style.css" />
  <script type="text/javascript" src="https://dev.vnikay.ru/js/inputmask.min.js"></script>
  <script type="text/javascript" src="https://dev.vnikay.ru/js/functions.js"></script>
- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+
+
+ <link rel="stylesheet" type="text/css" href="https://dev.vnikay.ru/css/video-js.min.css">
+ <script type="text/javascript" src="https://dev.vnikay.ru/js/video.min.js"></script>
+
+
+
+
+
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+ <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
 
  <link rel="stylesheet" href="assets/css/style.css">
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,7 +80,7 @@
 <body>
  <header class="header">
   <div class="header__inner">
-   <a class="header__logo" href="/courses/1"></a>
+   <a class="header__logo" href="/"></a>
    <div class="locale-container">
     <div class="locale">
      <div class="locale__value" data-value="ru">
@@ -127,6 +187,8 @@
   <div class="wrapper">
    <div class="ancors__list">
     <a href="courses.html">Курсы</a>
+    <a href="lesson.html">Открытый урок</a>
+    <a href="materials.html">Материалы</a>
    </div>
   </div>
  </div>
@@ -140,12 +202,7 @@
    </div>
    <div class="footer__item">
     <a href="/start" class="footer__start">
-     <span>Как начать</span>
-    </a>
-   </div>
-   <div class="footer__item">
-    <a href="/terms" class="footer__terms">
-     <span>Правовая информация</span>
+     <span>Пользовательское соглашение</span>
     </a>
    </div>
    <div class="footer__item">
@@ -176,12 +233,95 @@
    <div class="footer__time">С 06:00 до 18:00 в рабочие дни (время московское)</div>
   </div>
  </footer>
- <script>
-  const locale = "ru"; // Student or default locale(ru)
-  const studentLocale = null; // Student locale or null
 
-  initCodeMask();
+
+
+
+
+
+
+
+
+ <script>
+  const locale = "ru";
+  const studentLocale = null;
+
+  let progressDone = 0;
+  let progressTotal = 4;
+  const doneSet = new Set();
+
+  function throttle(func, timeFrame) {
+   let lastTime = 0;
+   return function(...args) {
+    let now = new Date();
+    if (now - lastTime >= timeFrame) {
+     func(...args);
+     lastTime = now;
+    }
+   };
+  }
+
+  function sendBookmark(bookmark, videoId) {
+   let currentTime = this.currentTime();
+   if (currentTime !== 0 && currentTime !== bookmark) {
+    fetch(`/lessons/api/bookmark/${videoId}/${currentTime}`, {
+      method: 'POST'
+     })
+     .then((response) => {
+      return response.json();
+     })
+     .then((data) => {
+      if (!doneSet.has(videoId)) {
+       if (data.progress === 'Done') {
+        document.getElementById(`play_icon_${videoId}`).style.display = 'none';
+        document.getElementById(`pause_icon_${videoId}`).style.display = 'none';
+        document.getElementById(`done_icon_${videoId}`).style.display = 'inline';
+        doneSet.add(videoId);
+        progressDone++;
+        document.getElementById('progress_bar').style.width = `${(progressDone / progressTotal).toFixed(2) * 100}%`;
+        document.getElementById('progress_text').textContent = `Пройдено ${progressDone} из ${progressTotal}`;
+       } else {
+        document.getElementById(`play_icon_${videoId}`).style.display = 'none';
+        document.getElementById(`pause_icon_${videoId}`).style.display = 'inline';
+        document.getElementById(`done_icon_${videoId}`).style.display = 'none';
+       }
+      }
+     });
+   }
+  }
+
+  [...document.getElementsByTagName('video')].forEach(function(video) {
+   let videoId = video.dataset.id;
+   let videoPlayer = videojs(video, {
+    html5: {
+     vhs: {
+      overrideNative: true
+     },
+     nativeVideoTracks: false,
+     nativeAudioTracks: false,
+     nativeTextTracks: false
+    }
+   });
+   videoPlayer.playsinline(true);
+
+
+   videoPlayer.on('error', function(e) {
+    e.stopImmediatePropagation();
+   });
+   let bookmark = parseFloat(video.dataset.bookmark);
+   videoPlayer.currentTime(bookmark);
+   if (video.dataset.progress === 'Done') {
+    doneSet.add(videoId);
+   }
+   videoPlayer.ready(function() {
+    this.on('timeupdate', throttle(() => sendBookmark.call(this, bookmark, videoId), 2500));
+    this.on('ended', () => sendBookmark.call(this, bookmark, videoId));
+   });
+  });
  </script>
+
+
+
 </body>
 
 </html>
