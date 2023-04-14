@@ -179,484 +179,86 @@
 
 
 
-
- <div id="licenseModal" class="licenseModal" style="display:none">
-  <div class="licenseModal__form">
-   <button class="licenseModal__form__close" onclick="closeLicenseModal()"></button>
-   <div class="course__promo__img">
-    <img src="https://dev.vnikay.ru/images/code-promo.svg" alt="promo" />
-   </div>
-   <form action="/courses/1" method="POST" name="license" class="course__code">
-    <label class="label" for="code">Введите лицензионный ключ</label>
-    <input name="code" class="input" id="code" type="text" required oninvalid="this.setCustomValidity(&quot;\u0417\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u044D\u0442\u043E \u043F\u043E\u043B\u0435&quot;)" oninput="resetErrors.call(this, 'error')">
-    <span class="course__code__reset" onclick="this.previousElementSibling.value=''"></span>
-    <button type="submit" class="button">Далее</button>
-   </form>
+ <div class="wrapper about">
+  <div class="main__block">
+   <h1 class="title">О проекте «Смотри, играй, говори»</h1>
+   <p>
+    «Смотри, играй, говори» - программа для изучения русского языка, как иностранного.
+    Опытные преподаватели подготовили для вас только полезные и интересные диалоги. Профессиональные актеры
+    озвучили их так, чтобы было понятно каждое слово. Не важно, какой уровень владения языком у вас сейчас,
+    программа поможет его улучшить. Для обучения вам потребуется только смартфон или компьютер.
+   </p>
+   <br>
+   <br>
+   <h2 class="subtitle">Как проходит обучение?</h2>
+   <p>Каждый урок – это короткий увлекательный диалог. Слушайте, повторяйте, запоминайте фразы и реплики,
+    которые обязательно пригодятся в повседневной жизни. Все диалоги сопровождаются субтитрами. Записывайте
+    видеоответы прямо в приложении, чтобы проверить свои знания и произношение, программа распознает речь и
+    покажет ошибки. Чтобы сделать процесс обучения еще ярче, интереснее и полезнее - создавайте свои
+    собственные фильмы на основе диалогов.</p>
+   <p>Занимайтесь в комфортном темпе. Меняйте скорость воспроизведения или ставьте урок на паузу, когда это
+    необходимо. Вы сможете начать с момента, на котором остановились, даже на другом устройстве.</p>
+   <br>
+   <p>Хотите повторить тему или освежить знания? Не проблема! Все уроки доступны для повторного обучения. Найти
+    нужный можно с помощью удобного поиска по заголовкам модулей.</p>
+   <p>Следите за своим прогрессом. Каждый урок будет отмечен: «не пройден», «пройден частично», или «пройден
+    полностью».</p>
+   <br>
+   <br>
+   <h2 class="subtitle">Как начать учиться?</h2>
+   <p>«Смотри, играй, говори» — это интернет-сервис. Вы можете скачать мобильное приложение или использовать
+    web-версию.</p>
+   <br>
+   <p>Чтобы начать пользоваться сервисом, нужно:</p>
+   <ol class="ol">
+    <li>Приобрести лицензионный ключ у партнеров программы «Смотри, играй, говори»</li>
+    <li>В мобильном приложении или на сайте сервиса указать номер мобильного телефона, ввести одноразовый пароль
+     из
+     смс-уведомления
+    </li>
+    <li>Указать лицензионный ключ, который был куплен у партнеров сервиса.</li>
+   </ol>
+   <br>
+   <br>
+   <h2 class="subtitle">Условия приобретения программного обеспечения</h2>
+   <p>Правообладатель программного обеспечения «Смотри, играй, говори» - Общество с ограниченной
+    ответственностью «Центр Цифровых Коммуникаций». Неисключительная лицензия на использование программного
+    обеспечения предоставляется по запросу на условиях правообладателя. Стоимость неисключительной лицензии,
+    порядок и условия её оплаты рассчитываются индивидуально. Подробности уточняйте по электронной почте:
+    <a href="partners@watchplayspeak.ru">partners@watchplayspeak.ru</a></p>
+   <br>
+   <br>
+   <h2 class="subtitle">
+    Сведения о правообладателе
+   </h2>
+   <p>Центр Цифровых Коммуникаций специализируется на разработке, производстве и дистрибуции собственного
+    мультимедийного программного обеспечения, а также осуществляет разработку заказного программного
+    обеспечения.</p>
+   <p>Технологии: <span class="color-green">#iOS #Android #Unix #Windows #Kotlin #Java #Swift # SwiftUI #C++ #Go #Python #JavaScript
+     #TypeScript</span></p>
+   <br>
+   <ul class="ul">
+    <li>Центр Цифровых Коммуникаций аккредитован Минцифры России и внесена в реестр аккредитованных
+     ИТ-компаний.
+    </li>
+    <li>Компания включена в реестр Роскомнадзора в качестве оператора, осуществляющего обработку персональных
+     данных, под номером 54-22-12250.
+    </li>
+   </ul>
+   <br>
+   <br>
+   <h2 class="subtitle">
+    Контактные данные
+   </h2>
+   <p>Телефон: <a class="link">+7-923-239-89-67</a></p>
+   <p>E-mail: <a class="link">legal@dccllc.ru</a></p>
+   <br>
+   <p>Юридический и почтовый адрес: 630090, Россия, Новосибирская область, г. Новосибирск,
+    ул. Кутателадзе, зд. 4Г, офис 572</p>
+   <br>
+   <br>
   </div>
  </div>
-
- <main class="main course">
-  <div class="wrapper">
-
-
-
-   <section class="white-wrap course__success">
-    <div class="course__success-title">
-     Готово!
-    </div>
-    <p>Ваш ключ успешно активирован. Приятных занятий!</p>
-   </section>
-
-
-   <section class="main__block">
-    <div class="course__head">
-     <div class="course__done">
-      <h2 class="course__done-title h2 h2--with-icon">
-       <svg viewBox="0 0 32 32">
-        <use xlink:href="/images/second-sprite.svg#star"></use>
-       </svg>
-       Ваш прогресс
-      </h2>
-      <div class="course__progress">
-       <div class="course__progress__text"><span>Пройдено</span>: <span style="color:black;font-weight: 600;">16</span>/<span>129</span></div>
-       <div class="progress-line progress-line--big" data-general="129" data-done="16">
-        <div class="progress-line__done"></div>
-       </div>
-      </div>
-     </div>
-
-
-     <div class="course__license">
-      <strong class="course__license-title">
-       <svg viewBox="0 0 24 28">
-        <use xlink:href="/images/second-sprite.svg#timer" />
-       </svg>
-       360 ДНЕЙ
-      </strong>
-      <div class="course__license-subtitle color-gray">до окночания действия лицензии</div>
-      <button class="course__license-subtitle-button btn" onclick="showLicenseModal()">
-       <span>
-        Ввести новый ключ
-       </span>
-       <div class="course__license-mobile-icon">
-        <svg viewBox="0 0 24 24" class="icon">
-         <use xlink:href="/images/second-sprite.svg#license" />
-        </svg>
-       </div>
-      </button>
-
-
-
-
-     </div>
-
-
-    </div>
-
-
-    <div class="courses__search">
-     <form method='GET'>
-      <input name="search" class="input" placeholder="Поиск по урокам…" id="search" value="" />
-      <button type="submit">
-       <svg viewBox="0 0 22 22">
-        <use xlink:href="/images/sprite.svg#icon_search" />
-       </svg>
-       <span>Найти</span>
-      </button>
-     </form>
-    </div>
-
-
-    <div class="courses-list">
-     <div class="course__block">
-      <h3 class="h3">Буквы и звуки</h3>
-      <div class="course-list">
-
-
-
-
-
-
-
-
-
-       <a href="#" class="course-card done">
-        <h3 class="course-card__title">
-         Буквы и звуки: А-Й
-        </h3>
-        <span class="course-card__subtitle">
-         Hərflər və səslər
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/1.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>11</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="11">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-       <a href="#" class="course-card process">
-        <h3 class="course-card__title">
-         Буквы и звуки: А-Й
-        </h3>
-        <span class="course-card__subtitle">
-         Hərflər və səslər
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/2.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>5</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="5">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-       <a href="#" class="course-card ">
-        <h3 class="course-card__title">
-         Буквы и звуки: А-Й
-        </h3>
-        <span class="course-card__subtitle">
-         Hərflər və səslər
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/3.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>0</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="0">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-
-      </div>
-     </div>
-     <br>
-     <br>
-
-
-     <div class="course__block">
-      <h3 class="h3">Базовые фразы</h3>
-      <div class="course-list">
-
-
-
-
-
-
-
-
-       <a href="#" class="course-card">
-        <h3 class="course-card__title">
-         Учёба/Работа
-        </h3>
-        <span class="course-card__subtitle">
-         Araşdırmalar/işləmək
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/11.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>0</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="0">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-       <a href="#" class="course-card">
-        <h3 class="course-card__title">
-         Дом
-        </h3>
-        <span class="course-card__subtitle">
-         Ev
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/12.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>0</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="0">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-       <a href="#" class="course-card">
-        <h3 class="course-card__title">
-         Ремонт/уборка
-        </h3>
-        <span class="course-card__subtitle">
-         Təmir/təmizləmə
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/13.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>0</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="0">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-       <a href="#" class="course-card">
-        <h3 class="course-card__title">
-         Еда
-        </h3>
-        <span class="course-card__subtitle">
-         Qida
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/14.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>0</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="0">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-       <a href="#" class="course-card">
-        <h3 class="course-card__title">
-         Свободное время
-        </h3>
-        <span class="course-card__subtitle">
-         Boş vaxt
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/15.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>0</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="0">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-       <a href="#" class="course-card">
-        <h3 class="course-card__title">
-         Путешествия
-        </h3>
-        <span class="course-card__subtitle">
-         Səyahətlər
-        </span>
-        <br>
-        <br>
-        <div class="course-card__img img img--contain">
-         <img src="images/course-card/16.png" alt="" />
-        </div>
-
-        <div class="course-card__progress">
-         <div class="course-card__progress-text">
-          <span>
-           Прогресс
-          </span>
-          <span class="course-card__progress-done">
-           <span>0</span> / <span>11</span>
-          </span>
-         </div>
-
-
-
-
-         <div class="progress-line" data-general="11" data-done="0">
-          <div class="progress-line__done">
-
-          </div>
-         </div>
-
-        </div>
-
-       </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-
-     </div>
-    </div>
-
-
-   </section>
-  </div>
- </main>
-
 
  <footer class="footer">
   <div class="footer__links">
